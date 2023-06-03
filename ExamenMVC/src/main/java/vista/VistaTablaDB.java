@@ -1,6 +1,8 @@
 package vista;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -51,7 +53,6 @@ public class VistaTablaDB extends JFrame implements Vistas{
 		addWindowListener(new WindowAdapter() {
 			public void windowOpened(WindowEvent e) {
 				controlador.consultarQuery("SELECT * FROM world.city");
-
 			}
 		});
 
@@ -73,18 +74,38 @@ public class VistaTablaDB extends JFrame implements Vistas{
 		scrollPane.setViewportView(table);
 		
 		btnTb1 = new JButton("Tb1");
+		btnTb1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.consultarQuery("SELECT * FROM world.city");
+			}
+		});
 		btnTb1.setBounds(22, 207, 68, 29);
 		contentPane.add(btnTb1);
 		
 		btnTb = new JButton("Tb2");
+		btnTb.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.consultarQuery("SELECT * FROM world.country");
+			}
+		});
 		btnTb.setBounds(90, 207, 68, 29);
 		contentPane.add(btnTb);
 		
 		btnTb3 = new JButton("Tb3");
+		btnTb3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.consultarQuery("SELECT * FROM world.countrylanguage");
+			}
+		});
 		btnTb3.setBounds(157, 207, 68, 29);
 		contentPane.add(btnTb3);
 		
 		btnTb4 = new JButton("Tb4");
+		btnTb4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.consultarQuery("SELECT * FROM world.users");
+			}
+		});
 		btnTb4.setBounds(224, 207, 68, 29);
 		contentPane.add(btnTb4);
 	}
