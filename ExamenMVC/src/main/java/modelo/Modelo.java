@@ -9,10 +9,13 @@ import java.sql.SQLException;
 
 import javax.swing.table.DefaultTableModel;
 
+import vista.VistaSeleccionados;
 import vista.VistaTablaDB;
 
 public class Modelo {
-	VistaTablaDB vistaTablaBD;
+	private VistaTablaDB vistaTablaBD;
+	private VistaSeleccionados vistaSeleccionados;
+
 
 	private final String bbdd = "world";
 	private final String user = "root";
@@ -100,6 +103,10 @@ public class Modelo {
 
 	public DefaultTableModel getModeloTabla() {
 		return this.modeloTabla;
+	}
+
+	public void setVistaSeleccionados(VistaSeleccionados vistaSeleccionados) {
+		this.vistaSeleccionados = vistaSeleccionados;
 	}
 
 }

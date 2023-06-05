@@ -116,6 +116,11 @@ public class VistaSeleccionados extends JFrame implements Vistas{
 		contentPane.add(btnAad);
 		
 		btnVerTablas = new JButton("Ver Tablas");
+		btnVerTablas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.cambiarVista("vistaTablaDB");
+			}
+		});
 		btnVerTablas.setBounds(292, 237, 136, 29);
 		contentPane.add(btnVerTablas);
 	}
